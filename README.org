@@ -1,0 +1,42 @@
+#+TITLE: Training.BookDB
+#+AUTHOR: RodrigoNevarez
+
+* About
+
+A small Common Lisp project for storing and managing book records,
+used as a learning exercise.
+
+* Requirements
+
+- [[https://www.sbcl.org/][SBCL]] (Steel Bank Common Lisp)
+- [[https://github.com/hanslub42/rlwrap][rlwrap]] (optional, for a nicer REPL experience with history/line-editing)
+
+On Arch Linux:
+
+#+begin_src sh
+sudo pacman -S sbcl rlwrap
+#+end_src
+
+* Usage
+
+Load the file into a REPL:
+
+#+begin_src sh
+rlwrap sbcl --load main.lisp
+#+end_src
+
+Then, from the SBCL REPL:
+
+#+begin_src lisp
+(make-book "The Hobbit" "J.R.R. Tolkien" 5)
+#+end_src
+
+This returns a plist representing the book:
+
+#+begin_src lisp
+(:TITLE "The Hobbit" :AUTHOR "J.R.R. Tolkien" :RATING 5)
+#+end_src
+
+* Project Structure
+
+- =main.lisp= :: Core functions for creating and managing book records.
